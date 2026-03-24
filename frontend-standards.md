@@ -100,6 +100,11 @@ Mọi code trong `frontend/src/` phải tuân theo cấu trúc rõ ràng:
 ## 16. UI, styling & icon
 - Sử dụng **Tailwind CSS** theo convention dự án (utility-first); tránh inline style dài lặp lại — tách class hoặc component nhỏ.
 - **Icon:** Dùng **lucide-react** (hoặc bộ icon đã chốt trong dự án) một cách nhất quán; không trộn nhiều thư viện icon không cần thiết.
+- **Tailwind v4 Setup:**
+    - Phải sử dụng `@tailwindcss/vite` plugin trong `vite.config.ts`.
+    - Sử dụng `@import "tailwindcss";` tại dòng đầu tiên của `src/index.css`.
+    - Mọi cấu hình design tokens (colors, fonts, ...) phải thực hiện trong block `@theme { ... }` bên trong file CSS.
+    - Không sử dụng `tailwind.config.js` trừ trường hợp đặc biệt cần tương thích ngược.
 - Giữ **spacing, typography, màu** đồng bộ (design tokens / theme Tailwind); không magic number lặp lại quá mức.
 
 ## 17. Logging & môi trường dev
